@@ -1,8 +1,34 @@
+import xs from 'xstream';
 import { run } from '@cycle/run';
-import { getDrivers, wrapMain } from './drivers';
-import { Component } from './interfaces';
-import { App } from './components/app';
+import { makeDOMDriver, div, input, p, h1 } from '@cycle/dom';
 
-const main: Component<any> = wrapMain(App);
+function toggle(sources) {
+  const sinks = {
+    DOM: sources.DOM.select('input')
+      .events('click')
+      .map(ev => ev.target.checked)
+      .startWith(false)
+      .map(toggled =>
+        div([
+          input({ attrs: { type: 'checkbox' } }),
+          'Toogle me',
+          p(toggled ? 'ON' : 'off')
+        ])
+      )
+  };
+  return sinks;
+}
 
-run(main as any, getDrivers());
+function counter() {
+  const sinks = {
+    DOM: xs.periodic(1000).map(i => h1(`${i} seconds elapsed`))
+  };
+  return sinks;
+}
+
+const drivers = {
+  DOM: makeDOMDriver('#app')
+};
+
+run(counter, drivers);
+// run(toggle, drivers);
