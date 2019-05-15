@@ -1,22 +1,32 @@
-import { Controller, Get, Query, Post, Put, Delete, HttpCode, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, UseFilters } from '@nestjs/common';
 // import { Request } from 'express';
 import { CreateCatDto, UpdateCatDto, ListAllEntities } from './dto';
 import { CatsService } from './cats.service';
-import { Cat } from './interfaces/cat.interface';
+// import { Cat } from './interfaces/cat.interface';
+import { ForbiddenException } from '../forbidden.exception';
+// import { HttpExceptionFilter } from '../http-exception.filter';
 
 @Controller('cats')
+// @UseFilters(HttpExceptionFilter)
 export class CatsController {
   constructor(private readonly catsService: CatsService) {}
 
   @Post()
   async create(@Body() createCatDto: CreateCatDto) {
-    this.catsService.create(createCatDto);
-    return { message: 'created!' };
+    // this.catsService.create(createCatDto);
+    // return { message: 'created!' };
+    throw new ForbiddenException();
   }
 
+  // @Get()
+  // async index(): Promise<Cat[]> {
+  //   return this.catsService.findAll();
+  // }
+
   @Get()
-  async index(): Promise<Cat[]> {
-    return this.catsService.findAll();
+  async index() {
+    // throw new ForbiddenException();
+    throw new HttpException('Request timeout', HttpStatus.REQUEST_TIMEOUT);
   }
 
   // CAUTION : routing order
