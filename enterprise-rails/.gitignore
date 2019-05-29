@@ -32,3 +32,6 @@
 
 # Ignore bundler installation path
 /vendor/bundle
+
+# Ignore postgres data
+/pgdata
