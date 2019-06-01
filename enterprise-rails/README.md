@@ -8,10 +8,15 @@
 # start Postgres database
 make postgres
 
-# control database directly
-psql -U postgre -h localhost -d practices_development
+# create database
+make database
 
-# dump schema from database (no migration)
+# control database directly
+psql -U postgres -h localhost -d practices_development
+# or
+bundle exec rails dbconsole
+
+# dump schema from database
 bundle exec rails db:schema:dump
 
 # start server

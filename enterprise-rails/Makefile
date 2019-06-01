@@ -1,8 +1,12 @@
 postgres:
-	docker run --rm -d --name pg -p 5432:5432 -v `pwd`/pgdata:/var/lib/postgresql/data postgres:11-alpine
+	docker run -d --name pg -p 5432:5432 -v `pwd`/pgdata:/var/lib/postgresql/data postgres:11-alpine
+
+database:
+	bundle exec rails db:create
 
 stop:
 	docker stop pg
 
-clean: stop
+clean:
+	docker rm pg
 	rm -rf pgdata
