@@ -1,0 +1,17 @@
+- hosts: all
+  remote_user: arsley
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: ensure nginx is installed
+    apt:
+      name: nginx
+      state: present
+  - name: ensure nginx is started
+    service:
+      name: nginx
+      state: started
+  - name: ensure template file is stored
+    template:
+      src: templates/ansible-template
+      dest: /home/arsley/
