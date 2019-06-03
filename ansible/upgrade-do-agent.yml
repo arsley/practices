@@ -1,0 +1,19 @@
+- hosts: all
+  remote_user: arsley
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: ensure Legacy Metrics Agent is not installed
+    apt:
+      name: do-agent
+      state: absent
+  - name: ensure installation script is downloaded
+    get_url:
+      url: https://insights.nyc3.cdn.digitaloceanspaces.com/install.sh
+      dest: /home/arsley/install.sh
+  - name: ensure DO Agent is installed
+    command: bash /home/arsley/install.sh
+  - name: ensure installation script is removed
+    file:
+      path: /home/arsley/install.sh
+      state: absent
