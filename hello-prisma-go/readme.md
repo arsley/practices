@@ -1,5 +1,9 @@
 # Go + Prisma (+ Go Modules)
 
+1. https://www.prisma.io/docs/get-started/01-setting-up-prisma-new-database-GO-g002/
+2. https://www.prisma.io/docs/get-started/02-change-data-model-GO-g101/
+3. https://www.prisma.io/docs/get-started/03-build-graphql-servers-with-prisma-GO-g201/
+
 ## Usage
 
 ```
