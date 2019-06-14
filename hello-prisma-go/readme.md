@@ -6,8 +6,8 @@
 
 ## Usage
 
-```
-# if you not prisma-cli not installed
+```bash
+# if you not prisma-cli installed
 brew tap prisma/prisma
 brew install prisma
 
