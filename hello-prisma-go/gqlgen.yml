@@ -1,0 +1,11 @@
+schema: server/schema.graphql
+exec:
+  filename: server/generated.go
+models:
+  Post:
+    model: github.com/arsley/practices/hello-prisma-go/generated/prisma-client.Post
+  User:
+    model: github.com/arsley/practices/hello-prisma-go/generated/prisma-client.User
+resolver:
+  filename: server/resolver.go
+  type: Resolver
