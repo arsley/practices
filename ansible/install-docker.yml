@@ -1,0 +1,6 @@
+- hosts: 13.231.179.26
+  remote_user: ubuntu
+  become: yes
+  become_method: sudo
+  tasks:
+    - command: echo 'hello world'

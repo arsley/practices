@@ -1,1 +1,8 @@
 dev.arsley.work
+
+[aws]
+13.231.179.26
+
+[aws:vars]
+ansible_ssh_private_key_file=~/.ssh/arsley-aws.pem
+ansible_python_interpreter=/usr/bin/python3
