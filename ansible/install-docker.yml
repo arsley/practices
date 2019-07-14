@@ -1,6 +1,32 @@
-- hosts: 13.231.179.26
+- hosts: aws
   remote_user: ubuntu
   become: yes
   become_method: sudo
+
   tasks:
-    - command: echo 'hello world'
+  - name: Install aptitude using apt
+    apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
+
+  - name: Install required packages
+    apt: name={{ item }} state=latest update_cache=yes
+    loop: ['apt-transport-https', 'ca-certificates', 'curl', 'gnupg-agent', 'software-properties-common']
+
+  - name: Add Docker's official GPG key
+    apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+
+  - name: Add Docker repository
+    apt_repository:
+      repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+      state: present
+
+  - name: Install docker-ce with updating apt
+    apt: name={{ item }} state=latest update_cache=yes
+    loop: ['docker-ce', 'docker-ce-cli', 'containerd.io']
+
+  - name: Install docker-compose 1.24.0
+    get_url:
+      url: https://github.com/docker/compose/releases/download/1.24.0/docker-compose-Linux-x86_64
+      dest: /usr/local/bin/docker-compose
+      mode: '+x'
