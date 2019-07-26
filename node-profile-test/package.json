@@ -1,0 +1,10 @@
+{
+  "name": "node-profile-test",
+  "version": "1.0.0",
+  "description": "Performance tuning test for nodejs app",
+  "main": "index.js",
+  "author": "Aoshi Fujioka <blue20will@gmail.com>",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
