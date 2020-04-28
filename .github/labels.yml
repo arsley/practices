@@ -4,12 +4,15 @@ labels:
     color: 9CCC65
   - name: kind/reactive
     description: Categorizes issue or PR as related to reactive tasks.
-    color: FFA000
+    color: FFA0BB
+  - name: kind/hogehoge
+    description: new hoge
+    color: FFA898
   - name: nice/hoge
     description: HOGEHOGE
     color: ff0000
-  - name: nice/fuga
-    description: FUGAFUGA
+  - name: nice/piyo
+    description: piyopiyo
     color: 00ff00
 
 repos:
@@ -17,7 +20,8 @@ repos:
     labels:
       - kind/proactive
       - kind/reactive
+      - kind/hogehoge
   - name: arsley/GIN-IC
     labels:
       - nice/hoge
-      - nice/fuga
+      - nice/piyo
