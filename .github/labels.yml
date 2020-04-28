@@ -17,7 +17,7 @@ repos:
     labels:
       - kind/proactive
       - kind/reactive
-  - name:arsley/GIN-IC
+  - name: arsley/GIN-IC
     labels:
       - nice/hoge
       - nice/fuga
