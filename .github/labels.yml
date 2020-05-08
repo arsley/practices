@@ -1,27 +1,60 @@
 labels:
-  - name: kind/proactive
-    description: Categorizes issue or PR as related to proactive tasks.
-    color: 9CCC65
-  - name: kind/reactive
-    description: Categorizes issue or PR as related to reactive tasks.
-    color: FFA0BB
-  - name: kind/hogehoge
-    description: new hoge
-    color: FFA898
-  - name: nice/hoge
-    description: HOGEHOGE
-    color: ff0000
-  - name: nice/piyo
-    description: piyopiyo
-    color: 00ff00
+  - name: problem/reseach
+    description: ''
+    color:  fbb8a2
+  - name: problem/bug
+    description: ''
+    color: f48d7a
+  - name: problem/high-priority
+    description: ''
+    color: ee6352
+
+  - name: mindless/chore
+    description: ''
+    color: f79d84
+  - name: mindless/documentation
+    description: ''
+    color: f79d84
+
+  - name: addition/feature
+    description: ''
+    color: 59cd90
+  - name: improvement/feature
+    description: ''
+    color: 3fa7d6
+
+  - name: dependency/upgrade
+    description: ''
+    color: 3fa7d6
+  - name: dependency/downgrade
+    description: ''
+    color: fac05e
+
+  - name: waiting/peer-review
+    description: ''
+    color: faa85e
+  - name: waiting/review
+    description: ''
+    color: fac05e
+  - name: waiting/merge
+    color: fac05e
+  - name: waiting/deploy
+    color: d3a885
 
 repos:
   - name: arsley/practices
     labels:
-      - kind/proactive
-      - kind/reactive
-      - kind/hogehoge
-  - name: arsley/GIN-IC
-    labels:
-      - nice/hoge
-      - nice/piyo
+      - problem/reseach
+      - problem/bug
+      - problem/high-priority
+      - mindless/chore
+      - mindless/documentation
+      - addition/feature
+      - improvement/feature
+      - dependency/upgrade
+      - dependency/downgrade
+      - waiting/peer-review
+      - waiting/review
+      - waiting/merge
+      - waiting/deploy
+
