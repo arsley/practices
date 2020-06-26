@@ -1,0 +1,11 @@
+waiting/review:
+  - ./**/*
+
+lang/ruby:
+  - ./**/*.rb
+
+lang/javascript:
+  - ./**/*.js
+
+lang/go:
+  - ./**/*.go
