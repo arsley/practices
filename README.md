@@ -1,3 +1,3 @@
 # Practices
 
-練習したもの置き場
+Try anything.
