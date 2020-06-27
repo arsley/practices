@@ -1,11 +1,11 @@
 waiting/review:
-  - ./**/*
+  - '**/*'
 
 lang/ruby:
-  - ./**/*.rb
+  - '**/*.rb'
 
 lang/javascript:
-  - ./**/*.js
+  - '**/*.js'
 
 lang/go:
-  - ./**/*.go
+  - '**/*.go'

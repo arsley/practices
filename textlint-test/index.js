@@ -29,6 +29,7 @@ const options = {
   rules: japaneseRules
 };
 
+// output
 console.log(options);
 
 // main operations
