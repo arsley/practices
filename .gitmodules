@@ -1,6 +1,6 @@
 [submodule "GIN-IC"]
 	path = GIN-IC
-	url = https://github.com/arsley/GIN-IC
+	url = git@github.com:arsley/GIN-IC
 [submodule "dotfiles"]
 	path = dotfiles
-	url = https://github.com/arsley/dotfiles
+	url = git@github.com:arsley/dotfiles
